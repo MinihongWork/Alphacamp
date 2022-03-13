@@ -49,11 +49,22 @@ app.get('/search', (req, res) => {
   .lean()
   .then( restaurant =>{
     const keyword = req.query.keyword
-    const restaurants = restaurant.results.filter(restaurant => {
+    const restaurants = restaurant.filter(restaurant => {
       return restaurant.name.toLowerCase().includes(keyword.toLowerCase())
     })
     res.render('index', { restaurants: restaurants, keyword: keyword })
   })
+  .catch(error => console.log(error))
+})
+
+app.get('/restaurant/new', (req, res) => {
+  res.render('newcontent')
+})
+
+app.post('/restaurant/create', (req, res) => {
+  console.log(req.body)
+  return restaurant.create(req.body)
+  .then(() => res.redirect('/'))
   .catch(error => console.log(error))
 })
 

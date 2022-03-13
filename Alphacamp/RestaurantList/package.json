@@ -16,7 +16,7 @@
     "body-parser": "^1.19.2",
     "bootstrap-icons": "^1.8.1",
     "express": "^4.16.4",
-    "express-handlebars": "^3.0.0",
+    "express-handlebars": "^4.0.2",
     "mongoose": "^6.2.6"
   }
 }

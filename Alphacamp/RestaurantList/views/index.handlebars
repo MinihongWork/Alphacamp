@@ -11,7 +11,7 @@
                   </div>
                   
                 </div>
-                <button type="button" class="btn btn-light border border-secondary mt-2 b-1">新增餐廳名單</button>
+                <a class="btn btn-light border border-secondary mt-2 b-1" href="./restaurant/new" role="button">新增餐廳名單</a>
           </form>
         </div>
       </div>
@@ -21,10 +21,11 @@
     <div class="container mt-5">
         <div class="col-md-10 col-12 mx-auto">
             <div class="row">
-                {{#each restaurants}}
-                    <a href="/restaurants/{{this.id}}" class="text-secondary col-4" style="text-decoration: none">
-                        <div class="card mb-3">
-                        <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}">
+                {{#each restaurants}}              
+                        <div class="card mb-3 col-4">
+                          <a href="/restaurants/{{this.id}}" class="text-secondary">
+                          <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}">
+                          </a>
                         <div class="card-body p-3">
                             <h6 class="card-title mb-1">{{this.name}}</h6>
                             <div class="restaurant-category mb-1">
@@ -44,7 +45,7 @@
                             
                         </div>
                         </div>
-                    </a>
+                   
                 {{/each}}
             </div>
         </div>
