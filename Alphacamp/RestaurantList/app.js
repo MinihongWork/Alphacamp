@@ -8,10 +8,15 @@ app.use(express.static('public'))
 
 // require express-handlebars here
 const exphbs = require('express-handlebars')
-//const restaurant = require('./restaurant.json')
+
+//handlebars
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
+
+// body-parser
+const bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({extended: true }))
 
 //mongodb connect
 const mongoose = require('mongoose')
@@ -38,7 +43,7 @@ app.get('/restaurants/:restaurant_id',(req,res) => {
   restaurant.find()
   .lean()
   .then( restaurant =>{
-    const RestaurantContent = restaurant.find(restaurant => restaurant.id.toString() === req.params.restaurant_id)    
+    const RestaurantContent = restaurant.find(restaurant => restaurant._id.toString() === req.params.restaurant_id)    
     res.render('content',{restaurants : RestaurantContent})
     })
   .catch(error => console.log(error))
