@@ -40,7 +40,7 @@
                             <div class="d-flex flex-row-reverse">
                             <a type="button" class="btn btn-outline-dark" href="/restaurants/{{this._id}}/edit" role="button">Edit</a>
                             <a type="button" class="btn btn-outline-dark" href="/restaurants/{{this._id}}" role="button">Detail</a>
-                            <form action="/restaurant/{{this._id}}/delete" method="POST">
+                            <form action="/restaurant/{{this._id}}?_method=DELETE" method="POST">
                               <button type="submit" class="btn btn-outline-dark">Delete</button>
                             </form>
                             </div>

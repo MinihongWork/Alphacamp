@@ -18,6 +18,10 @@ app.set('view engine', 'handlebars')
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({extended: true }))
 
+//methodoverride
+const methodOverride = require('method-override') 
+app.use(methodOverride('_method'))
+
 //mongodb connect
 const mongoose = require('mongoose')
 
@@ -82,7 +86,7 @@ app.post('/restaurant/create', (req, res) => {
   .catch(error => console.log(error))
 })
 
-app.post('/restaurant/:restaurant_id/edit', (req, res) => {
+app.put('/restaurant/:restaurant_id', (req, res) => {
   const id = req.params.restaurant_id
   return restaurant.findByIdAndUpdate(id,req.body)
   .then(() => res.redirect('/'))
@@ -90,9 +94,9 @@ app.post('/restaurant/:restaurant_id/edit', (req, res) => {
 })
 
 
-app.post('/restaurant/:restaurant_id/delete', (req, res) => {
+app.delete('/restaurant/:restaurant_id', (req, res) => {
   const id = req.params.restaurant_id
-  restaurant.findByIdAndDelete(id)
+  return restaurant.findByIdAndDelete(id)
   .then(() => res.redirect('/'))
   .catch(error => console.log(error))
 })
