@@ -10,13 +10,12 @@ MongoClient.connect(url, function (err, db) {
   db.close()
 })
 
-
 const db = mongoose.connection
-db.on('error',() =>{
-    console.log('connection error!')
+db.on('error', () => {
+  console.log('connection error!')
 })
 db.once('open', () => {
-    console.log('mongodb connected!')
+  console.log('mongodb connected!')
 })
 
 module.exports = db
