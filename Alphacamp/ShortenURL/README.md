@@ -1,11 +1,11 @@
 ###短網址產生器
 
-<img src = "https://github.com/MinihongWork/Alphacamp/blob/Alphacamp/Alphacamp/ShortenURL/public/stylesheets/image/index.png" style="max-width: 50%;">
+<img src = "https://github.com/MinihongWork/Alphacamp/blob/Alphacamp/Alphacamp/ShortenURL/public/stylesheets/image/index.png" style="max-width: 300px;">
 ## 開始使用
 
-請先確認有安裝 node.js 與 npm
-將專案 clone 到本地
-在本地開啟之後，透過終端機進入資料夾，輸入：
+1. 請先確認有安裝 node.js 與 npm
+2. 將專案 clone 到本地
+3. 在本地開啟之後，透過終端機進入資料夾，輸入：
 
    ```bash
    npm install
