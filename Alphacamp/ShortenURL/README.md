@@ -1,6 +1,6 @@
 短網址產生器
 
-<img src=/MinihongWork/Alphacamp/tree/Alphacamp/Alphacamp/ShortenURL/public/stylesheets/public/image/index.png>
+<img src = https://github.com/MinihongWork/Alphacamp/blob/Alphacamp/Alphacamp/ShortenURL/public/stylesheets/image/index.png>
 
 請先確認有安裝 node.js 與 npm
 
