@@ -1,0 +1,16 @@
+<div class="row col-12 p-0">
+        <h5 class="text text-center">success shorten URL</h5>
+        <a href="{{ShortURL}}" class="text text-center" id="ShortURL">{{ShortURL}}</a>
+    <div class="row">
+      <button type="button" class="btn btn-dark mt-3" onclick="copy()">Copy</button>
+      <a type="button" class="btn btn-dark mt-3" href="/">Back Homepage</a>
+    </div>
+</div>
+ <script>
+    function copy() {
+      const URL = document.getElementById("ShortURL")
+      navigator.clipboard.writeText(URL.innerText)
+        .then(() => alert('The ShortURL is copied'))
+        .catch(error => console.log(error))
+    }
+ </script>

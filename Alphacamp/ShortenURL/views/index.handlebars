@@ -1,11 +1,7 @@
-<div class="position-realive">
-    <div class="row position-absolute top-50 start-50 translate-middle justify-content-md-center col-3">
-        <h5 class="col-12 text-center fw-bold">短網址產生器</h5>
-        <img src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png" class="col-12"></img>
-        <div class="input-group col-12 p-0">
+<form action="/result" method="POST">
+    <div class="input-group col-12 p-0">
             <span class="bi bi-link bg-secondary" style="font-size:2rem;"></span>
-            <input type="text" class="form-control" placeholder="input URL here"></input>
-        </div>
-        <button type="submit" class="btn btn-dark mt-3 col-5">Shorten</button>
+            <input type="text" class="form-control" placeholder="input URL here" name="url"></input>
+        <button type="submit" class="btn btn-dark mt-3 col-12">Shorten</button>
     </div>
-</div>
+</form>
