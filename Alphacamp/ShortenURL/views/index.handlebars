@@ -1,7 +1,19 @@
 <form action="/result" method="POST">
     <div class="input-group col-12 p-0">
             <span class="bi bi-link bg-secondary" style="font-size:2rem;"></span>
-            <input type="text" class="form-control" placeholder="input URL here" name="url"></input>
-        <button type="submit" class="btn btn-dark mt-3 col-12">Shorten</button>
+            <input type="text" class="form-control" placeholder="input URL here" name="url" id="inputvalue"></input>
+        <button type="submit" class="btn btn-dark mt-3 col-12" id="apply">Shorten</button>
     </div>
 </form>
+<script>
+    const inputvalue = document.getElementById('inputvalue')
+    const apply = document.getElementById('apply')
+    apply.addEventListener('click', function check (event){
+         const keyword = inputvalue.value.trim().toLowerCase()
+         console.log(inputvalue.value)
+         if(!keyword.length){
+            event.preventDefault()
+            return alert('Please input a URL')
+        }
+    })
+</script>

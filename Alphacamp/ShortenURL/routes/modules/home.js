@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 router.post('/result', (req, res) => {
   const shortURL = randomshortURL(5)
   // check URL is a standard URL
-  const inputvalue = (req.body.url).replace(/\s*/g, '').match('^https')
+  const inputvalue = (req.body.url).replace(/\s*/g, '').match('^https://')
   if (!inputvalue) return res.render('error')
 
   // check mongodb and return
