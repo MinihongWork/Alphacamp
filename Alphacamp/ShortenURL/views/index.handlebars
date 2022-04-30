@@ -5,6 +5,28 @@
         <button type="submit" class="btn btn-dark mt-3 col-12" id="apply">Shorten</button>
     </div>
 </form>
+    <table class="table table-hover mt-3">
+        <thead>
+            <tr>
+            <th scope="col">Original URL</th>
+            <th scope="col">Short URL</th>
+            <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        {{#each URLdata}}
+        <tbody>
+            <tr class="table-active">
+            <th><a href="{{this.OriginalURL}}">{{this.OriginalURL}}</a></th>
+            <td><a href="{{this.ShortURL}}">{{this.ShortURL}}</a></td>
+            <td>
+                <form action="/{{this.ShortURL}}?_method=DELETE" method="POST">
+                    <button type="submmit" class="btn btn-danger"></button>
+                </form>
+            </td>
+            </tr>
+        </tbody>
+        {{/each}}
+    </table>
 <script>
     const inputvalue = document.getElementById('inputvalue')
     const apply = document.getElementById('apply')
