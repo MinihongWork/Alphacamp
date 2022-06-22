@@ -43,8 +43,8 @@
     const scrollLeft = win.pageXOffset
     const scrollTop = win.pageYOffset
     return {
-      scrollLeft: scrollLeft,
-      scrollTop: scrollTop
+      scrollLeft,
+      scrollTop
     }
   }
 
@@ -180,8 +180,8 @@
     return {
       x: element.offsetLeft,
       y: element.offsetTop,
-      width: width,
-      height: height
+      width,
+      height
     }
   }
 
@@ -484,9 +484,9 @@
       const existing = merged[current.name]
       merged[current.name] = existing
         ? Object.assign({}, existing, current, {
-            options: Object.assign({}, existing.options, current.options),
-            data: Object.assign({}, existing.data, current.data)
-          })
+          options: Object.assign({}, existing.options, current.options),
+          data: Object.assign({}, existing.data, current.data)
+        })
         : current
       return merged
     }, {}) // IE11 does not support Object.values
@@ -527,10 +527,10 @@
     }
 
     return {
-      width: width,
-      height: height,
+      width,
+      height,
       x: x + getWindowScrollBarX(element),
-      y: y
+      y
     }
   }
 
@@ -556,10 +556,10 @@
     }
 
     return {
-      width: width,
-      height: height,
-      x: x,
-      y: y
+      width,
+      height,
+      x,
+      y
     }
   }
 
@@ -768,7 +768,7 @@
       reference: referenceClientRect,
       element: popperRect,
       strategy: 'absolute',
-      placement: placement
+      placement
     })
     const popperClientRect = rectToClientRect(Object.assign({}, popperRect, popperOffsets))
     const elementClientRect = elementContext === popper ? popperClientRect : referenceClientRect // positive = overflowing the clipping rect
@@ -833,8 +833,8 @@
         options: Object.assign({}, DEFAULT_OPTIONS, defaultOptions),
         modifiersData: {},
         elements: {
-          reference: reference,
-          popper: popper
+          reference,
+          popper
         },
         attributes: {},
         styles: {}
@@ -842,7 +842,7 @@
       let effectCleanupFns = []
       let isDestroyed = false
       var instance = {
-        state: state,
+        state,
         setOptions: function setOptions (options) {
           cleanupModifierEffects()
           state.options = Object.assign({}, defaultOptions, state.options, options)
@@ -961,10 +961,10 @@
 
             if (typeof fn === 'function') {
               state = fn({
-                state: state,
+                state,
                 options: _options,
-                name: name,
-                instance: instance
+                name,
+                instance
               }) || state
             }
           }
@@ -1010,10 +1010,10 @@
 
           if (typeof effect === 'function') {
             const cleanupFn = effect({
-              state: state,
-              name: name,
-              instance: instance,
-              options: options
+              state,
+              name,
+              instance,
+              options
             })
 
             const noopFn = function noopFn () {}
@@ -1180,7 +1180,7 @@
     }
 
     const commonStyles = Object.assign({
-      position: position
+      position
     }, adaptive && unsetSides)
 
     if (gpuAcceleration) {
@@ -1216,15 +1216,15 @@
       placement: getBasePlacement(state.placement),
       popper: state.elements.popper,
       popperRect: state.rects.popper,
-      gpuAcceleration: gpuAcceleration
+      gpuAcceleration
     }
 
     if (state.modifiersData.popperOffsets != null) {
       state.styles.popper = Object.assign({}, state.styles.popper, mapToStyles(Object.assign({}, commonStyles, {
         offsets: state.modifiersData.popperOffsets,
         position: state.options.strategy,
-        adaptive: adaptive,
-        roundOffsets: roundOffsets
+        adaptive,
+        roundOffsets
       })))
     }
 
@@ -1233,7 +1233,7 @@
         offsets: state.modifiersData.arrow,
         position: 'absolute',
         adaptive: false,
-        roundOffsets: roundOffsets
+        roundOffsets
       })))
     }
 
@@ -1337,8 +1337,8 @@
 
     const _ref = typeof offset === 'function'
       ? offset(Object.assign({}, rects, {
-          placement: placement
-        }))
+        placement
+      }))
       : offset
     let skidding = _ref[0]
     let distance = _ref[1]
@@ -1424,10 +1424,10 @@
     const variation = getVariation(placement)
     const placements$1 = variation
       ? flipVariations
-          ? variationPlacements
-          : variationPlacements.filter(function (placement) {
-            return getVariation(placement) === variation
-          })
+        ? variationPlacements
+        : variationPlacements.filter(function (placement) {
+          return getVariation(placement) === variation
+        })
       : basePlacements
     let allowedPlacements = placements$1.filter(function (placement) {
       return allowedAutoPlacements.indexOf(placement) >= 0
@@ -1443,10 +1443,10 @@
 
     const overflows = allowedPlacements.reduce(function (acc, placement) {
       acc[placement] = detectOverflow(state, {
-        placement: placement,
-        boundary: boundary,
-        rootBoundary: rootBoundary,
-        padding: padding
+        placement,
+        boundary,
+        rootBoundary,
+        padding
       })[getBasePlacement(placement)]
       return acc
     }, {})
@@ -1492,13 +1492,13 @@
     const placements = [preferredPlacement].concat(fallbackPlacements).reduce(function (acc, placement) {
       return acc.concat(getBasePlacement(placement) === auto
         ? computeAutoPlacement(state, {
-            placement: placement,
-            boundary: boundary,
-            rootBoundary: rootBoundary,
-            padding: padding,
-            flipVariations: flipVariations,
-            allowedAutoPlacements: allowedAutoPlacements
-          })
+          placement,
+          boundary,
+          rootBoundary,
+          padding,
+          flipVariations,
+          allowedAutoPlacements
+        })
         : placement)
     }, [])
     const referenceRect = state.rects.reference
@@ -1516,11 +1516,11 @@
       const isVertical = [top, bottom].indexOf(_basePlacement) >= 0
       const len = isVertical ? 'width' : 'height'
       const overflow = detectOverflow(state, {
-        placement: placement,
-        boundary: boundary,
-        rootBoundary: rootBoundary,
-        altBoundary: altBoundary,
-        padding: padding
+        placement,
+        boundary,
+        rootBoundary,
+        altBoundary,
+        padding
       })
       let mainVariationSide = isVertical ? isStartVariation ? right : left : isStartVariation ? bottom : top
 
@@ -1621,10 +1621,10 @@
     const _options$tetherOffset = options.tetherOffset
     const tetherOffset = _options$tetherOffset === void 0 ? 0 : _options$tetherOffset
     const overflow = detectOverflow(state, {
-      boundary: boundary,
-      rootBoundary: rootBoundary,
-      padding: padding,
-      altBoundary: altBoundary
+      boundary,
+      rootBoundary,
+      padding,
+      altBoundary
     })
     const basePlacement = getBasePlacement(state.placement)
     const variation = getVariation(state.placement)
@@ -1636,8 +1636,8 @@
     const popperRect = state.rects.popper
     const tetherOffsetValue = typeof tetherOffset === 'function'
       ? tetherOffset(Object.assign({}, state.rects, {
-          placement: state.placement
-        }))
+        placement: state.placement
+      }))
       : tetherOffset
     const data = {
       x: 0,
@@ -1722,8 +1722,8 @@
   const toPaddingObject = function toPaddingObject (padding, state) {
     padding = typeof padding === 'function'
       ? padding(Object.assign({}, state.rects, {
-          placement: state.placement
-        }))
+        placement: state.placement
+      }))
       : padding
     return mergePaddingObject(typeof padding !== 'number' ? padding : expandToHashMap(padding, basePlacements))
   }
@@ -1805,7 +1805,7 @@
     enabled: true,
     phase: 'main',
     fn: arrow,
-    effect: effect,
+    effect,
     requires: ['popperOffsets'],
     requiresIfExists: ['preventOverflow']
   }
@@ -1849,10 +1849,10 @@
     const isReferenceHidden = isAnySideFullyClipped(referenceClippingOffsets)
     const hasPopperEscaped = isAnySideFullyClipped(popperEscapeOffsets)
     state.modifiersData[name] = {
-      referenceClippingOffsets: referenceClippingOffsets,
-      popperEscapeOffsets: popperEscapeOffsets,
-      isReferenceHidden: isReferenceHidden,
-      hasPopperEscaped: hasPopperEscaped
+      referenceClippingOffsets,
+      popperEscapeOffsets,
+      isReferenceHidden,
+      hasPopperEscaped
     }
     state.attributes.popper = Object.assign({}, state.attributes.popper, {
       'data-popper-reference-hidden': isReferenceHidden,
@@ -1875,7 +1875,7 @@
 
   const defaultModifiers = [eventListeners, popperOffsets$1, computeStyles$1, applyStyles$1, offset$1, flip$1, preventOverflow$1, arrow$1, hide$1]
   const createPopper = /* #__PURE__ */popperGenerator({
-    defaultModifiers: defaultModifiers
+    defaultModifiers
   }) // eslint-disable-next-line import/no-unused-modules
 
   exports.applyStyles = applyStyles$1

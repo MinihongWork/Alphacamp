@@ -3,7 +3,8 @@ const router = express.Router()
 const Restaurant = require('../../models/restaurant')
 
 router.get('/', (req, res) => {
-  Restaurant.find()
+  const userId = req.user._id
+  Restaurant.find({ userId })
     .lean()
     .sort({ _id: 'asc' })
     .then(restaurant => res.render('index', { restaurants: restaurant }))
@@ -18,7 +19,7 @@ router.get('/search', (req, res) => {
       const restaurants = restaurant.filter(restaurant => {
         return restaurant.name.toLowerCase().includes(keyword.toLowerCase())
       })
-      res.render('index', { restaurants: restaurants, keyword: keyword })
+      res.render('index', { restaurants, keyword })
     })
     .catch(error => console.log(error))
 })

@@ -4587,8 +4587,8 @@
 
       const hideEvent = previous
         ? EventHandler.trigger(previous, EVENT_HIDE$1, {
-            relatedTarget: this._element
-          })
+          relatedTarget: this._element
+        })
         : null
       const showEvent = EventHandler.trigger(this._element, EVENT_SHOW$1, {
         relatedTarget: previous
