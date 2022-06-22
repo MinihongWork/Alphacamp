@@ -1,16 +1,17 @@
 ###餐廳清單
-<img src = "https://github.com/MinihongWork/Alphacamp/blob/Alphacamp/Alphacamp/RestaurantList/public/image/sample.png" width="900px">
+<img src = "https://github.com/MinihongWork/Alphacamp/blob/Alphacamp/Alphacamp/RestaurantList/public/image/sample.png" width="900px">  
 
-此網頁可以使用的功能如下 :
-使用者可以新增一家餐廳
-使用者可以瀏覽一家餐廳的詳細資訊
-使用者可以瀏覽全部所有餐廳
-使用者可以修改一家餐廳的資訊
-使用者可以刪除一家餐廳
-使用者可以註冊帳號，註冊的資料包括：名字(非必要)、email、密碼、確認密碼
-    使用者可以透過 Facebook Login 直接登入
 
-此外，使用者必須登入才能使用餐廳清單
+此網頁可以使用的功能如下 :  
+使用者可以新增一家餐廳  
+使用者可以瀏覽一家餐廳的詳細資訊  
+使用者可以瀏覽全部所有餐廳  
+使用者可以修改一家餐廳的資訊  
+使用者可以刪除一家餐廳  
+使用者可以註冊帳號，註冊的資料包括：名字(非必要)、email、密碼、確認密碼  
+    使用者可以透過 Facebook Login 直接登入  
+
+此外，使用者必須登入才能使用餐廳清單  
 
 ## 開始使用
 1. 請先確認有安裝 node.js ， npm 與使用環境的插件安裝項目
