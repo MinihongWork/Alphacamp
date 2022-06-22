@@ -1,4 +1,4 @@
-###餐廳清單
+## 餐廳清單
 <img src = "https://github.com/MinihongWork/Alphacamp/blob/Alphacamp/Alphacamp/RestaurantList/public/image/sample.png" width="900px">  
 
 
@@ -49,16 +49,16 @@
    ctrl + c
    ```
 
-使用環境
-    bcryptjs: 2.4.3
-    body-parser: 1.19.2
-    connect-flash: 0.1.1
-    dotenv: 8.2.0
-    express: 4.16.4
-    express-handlebars: 6.0.6
-    express-session: 1.17.1
-    method-override: 3.0.0
-    mongoose": 6.2.6
-    passport": 0.4.1
-    passport-facebook": 3.0.0
+使用環境  
+    bcryptjs: 2.4.3  
+    body-parser: 1.19.2  
+    connect-flash: 0.1.1  
+    dotenv: 8.2.0  
+    express: 4.16.4  
+    express-handlebars: 6.0.6  
+    express-session: 1.17.1  
+    method-override: 3.0.0  
+    mongoose": 6.2.6  
+    passport": 0.4.1  
+    passport-facebook": 3.0.0  
     passport-local": 1.0.0
